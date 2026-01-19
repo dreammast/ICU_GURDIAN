@@ -1,0 +1,42 @@
+services:
+  # Frontend - Next.js Application
+  - type: web
+    name: icu-guardian-frontend
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      # Add your Google AI API key here (set in Render dashboard)
+      - key: GOOGLE_GENAI_API_KEY
+        sync: false
+      # Next.js specific
+      - key: NEXT_PUBLIC_API_URL
+        sync: false
+    healthCheckPath: /api/health
+
+  # Backend - Python FastAPI
+  - type: web
+    name: icu-guardian-backend
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PORT
+        value: 8000
+      # Add your API keys here (set in Render dashboard)
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
