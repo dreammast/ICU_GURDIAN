@@ -1,0 +1,12 @@
+langchain==0.1.0
+langgraph
+langchain-openai
+pypdf
+fastapi
+uvicorn
+python-dotenv
+pandas
+numpy
+google-generativeai
+groq
+markdown
