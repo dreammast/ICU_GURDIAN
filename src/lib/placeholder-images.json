@@ -1,0 +1,10 @@
+{
+  "placeholderImages": [
+    {
+      "id": "lab-report-1",
+      "description": "A sample lab report with various medical readings.",
+      "imageUrl": "https://images.unsplash.com/photo-1762846700374-f4aeb2f38e92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkb2N1bWVudCUyMHBhcGVyfGVufDB8fHx8MTc2NTU0ODY5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "document paper"
+    }
+  ]
+}
